@@ -1,6 +1,8 @@
 import gspread
 from datetime import datetime, timedelta
 import os
+from mail import send_email
+from dotenv import load_dotenv
 
 def lastWday():
 	now = datetime.now()
@@ -190,4 +192,3 @@ if __name__ == "__main__":
 	sh = gc.open("1Spatial Football - 2023")
 
 	createNewSheet(sh)
-	# print(nextWednesday())

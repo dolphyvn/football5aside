@@ -29,21 +29,23 @@ def nextWednesday():
 
 
 
-def send_email(subject, body, sender, recipients, password):
-    msg = MIMEMultipart('alternative')
-    msg['Subject'] = subject
-    msg['From'] = sender
-    msg['To'] = ', '.join(recipients)
-    part1 = MIMEText(body, 'html')
-    msg.attach(part1)
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp_server:
-       smtp_server.login(sender, password)
-       smtp_server.sendmail(sender, recipients, msg.as_string())
-    print("Message sent!")
+def send_email(subject, body, sender, recipients):
+   load_dotenv()
+   password = os.getenv('EMAIL_PASSWORD')
+   msg = MIMEMultipart('alternative')
+   msg['Subject'] = subject
+   msg['From'] = sender
+   msg['To'] = ', '.join(recipients)
+   part1 = MIMEText(body, 'html')
+   msg.attach(part1)
+   with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp_server:
+    smtp_server.login(sender, password)
+    smtp_server.sendmail(sender, recipients, msg.as_string())
+   print("Message sent!")
 
 if __name__ == "__main__":
 
-   load_dotenv()
+   
    
    subject = "[footy5aside] Game on " + nextWednesday()
    body = """
@@ -61,6 +63,4 @@ if __name__ == "__main__":
          """
    sender = "dolphy.phanle@gmail.com"
    recipients = ["dolphy@aliases.me"]
-   # Get password from environment variable
-   password = os.getenv('EMAIL_PASSWORD')
-   send_email(subject, body, sender, recipients, password)
+   send_email(subject, body, sender, recipients)
