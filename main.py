@@ -40,7 +40,7 @@ def nextWednesday():
 	# Print the result
 	print('The next Wednesday is on:', next_wednesday)
 	return next_wednesday.strftime('%d-%B-%Y')
-	
+
 def hideSheet(spreadsheet,worksheet):
 	sheetId = worksheet.id
 	spreadsheet.batch_update(body={
@@ -182,7 +182,10 @@ def createNewSheet(sh):
 
 if __name__ == "__main__":
 	# gc = gspread.service_account()
-	gc = gspread.oauth()
+	gc = gspread.oauth(
+	    credentials_filename='~/.config/gspread/credentials.json',
+	    authorized_user_filename='~/.config/gspread/authorized_user.json'
+	)
 
 	sh = gc.open("1Spatial Football - 2023")
 
