@@ -1,6 +1,6 @@
 import gspread
 from datetime import datetime, timedelta
-
+import os
 
 def lastWday():
 	now = datetime.now()
@@ -183,8 +183,8 @@ def createNewSheet(sh):
 if __name__ == "__main__":
 	# gc = gspread.service_account()
 	gc = gspread.oauth(
-	    credentials_filename='~/.config/gspread/credentials.json',
-	    authorized_user_filename='~/.config/gspread/authorized_user.json'
+	    credentials_filename=os.path.expanduser('~/.config/gspread/credentials.json'),
+	    authorized_user_filename=os.path.expanduser('~/.config/gspread/authorized_user.json')
 	)
 
 	sh = gc.open("1Spatial Football - 2023")
