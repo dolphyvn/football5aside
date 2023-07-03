@@ -33,7 +33,7 @@ def gameIsOnConfirm():
 def gameIsOffConfirm():
 
    load_dotenv()
-   subject = "[footy5aside] Game on " + nextWednesday()
+   subject = "[footy5aside] Game OFF " + nextWednesday()
    body = """
    <html>
    <body>
@@ -54,7 +54,7 @@ def gameIsOffConfirm():
 def cancelBooking():
 
    load_dotenv()
-   subject = "[footy5aside] Game on " + nextWednesday()
+   subject = "[footy5aside] Game OFF " + nextWednesday()
    body = """
    <html>
    <body>
