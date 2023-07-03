@@ -26,7 +26,7 @@ def gameIsOnConfirm():
    </html>
          """
    sender = "dolphy.phanle@gmail.com"
-   recipients = (os.getenv('TOME')).split(',')
+   recipients = (os.getenv('TONH')).split(',')
    send_email(subject, body, sender, recipients)
 
 
@@ -48,7 +48,7 @@ def gameIsOffConfirm():
    </html>
          """
    sender = "dolphy.phanle@gmail.com"
-   recipients = (os.getenv('TOME')).split(',')
+   recipients = (os.getenv('TONH')).split(',')
    send_email(subject, body, sender, recipients)
 
 def cancelBooking():
@@ -69,5 +69,5 @@ def cancelBooking():
    </html>
          """
    sender = "dolphy.phanle@gmail.com"
-   recipients = (os.getenv('TONH_STAFF')).split(',')
+   recipients = (os.getenv('TOME')).split(',')
    send_email(subject, body, sender, recipients)

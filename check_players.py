@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 import os
 from mail import send_email
 from dotenv import load_dotenv
-import mail_resend
+from mail_resend import cancelBooking,gameIsOffConfirm,gameIsOnConfirm
 
 def count(sh):
 
