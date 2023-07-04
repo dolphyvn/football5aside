@@ -8,6 +8,40 @@ from main import nextWednesday
 from dotenv import load_dotenv
 
 
+def beforeGameDay(nplayers):
+
+   load_dotenv()
+
+   # Messages based on number of players
+   if nplayers == 0:
+      message = "We currently have no players. If you have friends and want to join, please share with them."
+   elif nplayers < 6:
+      message = f"We currently have {nplayers}. We need more players."
+   elif nplayers < 9:
+      message = "Looks like we have enough. Keep it up, guys!"
+   elif nplayers < 12:
+      message = "Great turnout! Looking forward to the game."
+   else:
+      message = "Fantastic! We have more than enough players. Let's make this a great game."
+
+   subject = "[footy5aside] Game on " + nextWednesday()
+   body = f"""
+   <html>
+   <body>
+         <p>Hi everyone,</p>
+
+         <p>Just another reminder to signup your name here: <a href="https://tinyurl.com/1spatial">https://tinyurl.com/1spatial</a> for the game tomorrow.</p>
+         <p>{message}</p>
+
+         <p>Cheers,</p>
+         <p>Dolphy</p>
+   </body>
+   </html>
+         """
+   sender = "dolphy.phanle@gmail.com"
+   recipients = (os.getenv('TOME')).split(',')
+   send_email(subject, body, sender, recipients)
+
 def gameIsOnConfirm():
 
    load_dotenv()
