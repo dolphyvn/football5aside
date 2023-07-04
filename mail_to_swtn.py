@@ -18,7 +18,7 @@ if __name__ == "__main__":
          <p>Hi everyone,</p>
 
          <p>Anyone would like to play footbal game on this Wednesday at 6pm at Netherhall Sports Center. </p>
-         <p>Please update google spreadsheet if you interested: <a href="https://tinyurl.com/1spatial">https://tinyurl.com/1spatial</a></p>
+         <p>Please signup your name on the google spreadsheet if you interested: <a href="https://tinyurl.com/1spatial">https://tinyurl.com/1spatial</a></p>
          
          <p>Cheers,</p>
          <p>Dolphy</p>
