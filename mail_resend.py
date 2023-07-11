@@ -15,7 +15,7 @@ def beforeGameDay(nplayers):
    # Messages based on number of players
    if nplayers == 0:
       message = "We currently have no players. If you have friends and want to join, please share with them."
-   elif nplayers < 6:
+   elif nplayers < 7:
       message = f"We currently have {nplayers}. We need more guys."
    elif nplayers < 9:
       message = "Looks like we have enough. Keep it up, guys!"

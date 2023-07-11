@@ -203,4 +203,4 @@ if __name__ == "__main__":
 	sh = gc.open("1Spatial Football - 2023")
 	print(count(sh))
 
-	# createNewSheet(sh)
+	createNewSheet(sh)
