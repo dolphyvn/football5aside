@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
 	sh = gc.open("1Spatial Football - 2023")
 	nplayers = (len(count(sh)))
-	if int(nplayers) < 6:
+	if int(nplayers) < 8:
 		print("Game will cancel before 4pm")
 		print("Sending cancel booking email to NH support staff")
 		cancelBooking()
