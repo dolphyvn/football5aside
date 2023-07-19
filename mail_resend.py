@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 import os
 from datetime import datetime, timedelta
 from mail import send_email
-from main import nextWednesday
+from main import nextWednesday,currentWednesday
 from dotenv import load_dotenv
 
 
@@ -45,7 +45,7 @@ def beforeGameDay(nplayers):
 def gameIsOnConfirm():
 
    load_dotenv()
-   subject = "[footy5aside] Game on " + nextWednesday()
+   subject = "[footy5aside] Game on " + currentWednesday()
    body = """
    <html>
    <body>

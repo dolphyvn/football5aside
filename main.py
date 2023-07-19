@@ -21,6 +21,24 @@ def nWday():
     next_wednesday_str = next_wednesday.strftime('%d-%B-%Y')
     return next_wednesday_str
 
+def currentWednesday():
+    # Get the current date
+    now = datetime.now()
+
+    # Get the weekday number for today (0 is Monday, 1 is Tuesday, ..., 6 is Sunday)
+    weekday = now.weekday()
+
+    # Calculate how many days we have to subtract to get to the most recent Wednesday
+    # The number 2 represents Wednesday (0 for Monday, 1 for Tuesday, etc.)
+    days_since_wednesday = (weekday - 2 + 7) % 7
+
+    # Subtract the necessary number of days from the current date
+    current_wednesday = now - timedelta(days=days_since_wednesday)
+
+    # Print the result
+    print('The current Wednesday is on:', current_wednesday)
+    return current_wednesday.strftime('%d-%B-%Y')
+
 def nextWednesday():
 	# Get the current date
 	now = datetime.now()
