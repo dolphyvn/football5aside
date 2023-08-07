@@ -67,7 +67,7 @@ def gameIsOnConfirm():
 def gameIsOffConfirm():
 
    load_dotenv()
-   subject = "[footy5aside] Game OFF " + nextWednesday()
+   subject = "[footy5aside] Game OFF " + currentWednesday()
    body = """
    <html>
    <body>
@@ -103,5 +103,5 @@ def cancelBooking():
    </html>
          """
    sender = "dolphy.phanle@gmail.com"
-   recipients = (os.getenv('TOME')).split(',')
+   recipients = (os.getenv('TOOFF')).split(',')
    send_email(subject, body, sender, recipients)
