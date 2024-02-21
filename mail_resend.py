@@ -31,6 +31,7 @@ def beforeGameDay(nplayers):
          <p>Hi everyone,</p>
 
          <p>Just another reminder to signup your name here: <a href="https://tinyurl.com/1spatial">https://tinyurl.com/1spatial</a> for the game tomorrow.</p>
+         <p>And remember to signup your name before 4pm Tuesday! </p>
          <p>{message}</p>
 
          <p>Cheers,</p>
@@ -45,14 +46,14 @@ def beforeGameDay(nplayers):
 def gameIsOnConfirm():
 
    load_dotenv()
-   subject = "[footy5aside] Game on " + currentWednesday()
+   subject = "[footy5aside] Game on " + nextWednesday()
    body = """
    <html>
    <body>
          <p>Hi everyone,</p>
 
          <p>We have enough players: <a href="https://tinyurl.com/1spatial">https://tinyurl.com/1spatial</a></p>
-         <p>So game is on today. See you!</p>
+         <p>So game is on. See you!</p>
 
          <p>Cheers,</p>
          <p>Dolphy</p>
@@ -67,14 +68,14 @@ def gameIsOnConfirm():
 def gameIsOffConfirm():
 
    load_dotenv()
-   subject = "[footy5aside] Game OFF " + currentWednesday()
+   subject = "[footy5aside] Game OFF " + nextWednesday()
    body = """
    <html>
    <body>
          <p>Hi everyone,</p>
 
          <p>We have not enough players: <a href="https://tinyurl.com/1spatial">https://tinyurl.com/1spatial</a></p>
-         <p>So game is Off today. See you next week hopefully!</p>
+         <p>So this week game is Off. See you next week hopefully!</p>
 
          <p>Cheers,</p>
          <p>Dolphy</p>
@@ -88,7 +89,7 @@ def gameIsOffConfirm():
 def cancelBooking():
 
    load_dotenv()
-   subject = "[footy5aside] Game OFF " + nextWednesday()
+   subject = "[1Spatial Game CANCEL " + nextWednesday()
    body = """
    <html>
    <body>
